@@ -1,0 +1,1 @@
+: name: Simulate Deploy on: push jobs: deploy: runs-on: ubuntu-latest steps: - name: Simulate deployment run: echo "Pretending to deploy code..." - name: Notify rollback intelligence run: | curl -X POST https://six-symbols-melt.loca.lt/deploy-webhook \ -H "Content-Type: application/json" \ -d '{"commit": "${{ github.sha }}", "branch": "${{ github.ref_name }}"}'
